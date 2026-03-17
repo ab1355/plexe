@@ -53,7 +53,7 @@ from pathlib import Path
 
 best_solution, metrics, report = main(
     intent="predict whether a passenger was transported",
-    data_refs=["train.parquet"],
+    train_dataset_uri="train.parquet",
     max_iterations=5,
     work_dir=Path("./workdir"),
 )
@@ -76,7 +76,7 @@ Build complete models with a single call. Plexe supports **XGBoost**, **CatBoost
 ```python
 best_solution, metrics, report = main(
     intent="predict house prices based on property features",
-    data_refs=["housing.parquet"],
+    train_dataset_uri="housing.parquet",
     max_iterations=10,                    # Search iterations
     allowed_model_types=["xgboost"],      # Or let plexe choose
     enable_final_evaluation=True,         # Evaluate on held-out test set
@@ -169,7 +169,7 @@ python -m plexe.viz --work-dir ./workdir
 Connect plexe to custom storage, tracking, and deployment infrastructure via the `WorkflowIntegration` interface:
 
 ```python
-main(intent="...", data_refs=[...], integration=MyCustomIntegration())
+main(intent="...", train_dataset_uri="data.parquet", integration=MyCustomIntegration())
 ```
 
 See [`plexe/integrations/base.py`](plexe/integrations/base.py) for the full interface.
