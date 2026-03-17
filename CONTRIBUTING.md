@@ -16,7 +16,7 @@ Thank you for considering contributing to plexe! Your contributions help improve
 
 ## Code of Conduct
 
-By participating in this project, you agree to uphold our [Code of Conduct](link-to-code-of-conduct), which outlines expectations for respectful and inclusive interactions.
+By participating in this project, you agree to uphold our [Code of Conduct](CODE_OF_CONDUCT.md), which outlines expectations for respectful and inclusive interactions.
 
 ## How Can I Contribute?
 
@@ -112,12 +112,14 @@ Ensure all tests pass before making contributions.
 
 ### Coding Standards
 
-Adhere to PEP 8 guidelines for Python code. Key points include:
+Adhere to the project's coding style. Key points include:
 
 - Use 4 spaces per indentation level.
-- Limit lines to 79 characters.
+- Limit lines to 120 characters (enforced by Black).
 - Use meaningful variable and function names.
 - Include docstrings for all public modules, classes, and functions.
+- Format code with [Black](https://black.readthedocs.io/) (`poetry run black .`).
+- Lint code with [Ruff](https://docs.astral.sh/ruff/) (`poetry run ruff check . --fix`).
 
 ### Commit Messages
 
